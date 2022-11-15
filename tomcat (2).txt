@@ -1,0 +1,17 @@
+Install apache tomact, on redhat server.  ipaddress:8080
+steps
+1.	Go to apache tomcat website, under core, copy tar.gz link address
+2.	wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz
+If wget command is not found , install it by sudo yum install wget or sudo apt-get install
+3.	Extract the tar files with the command tar -zvxf apache-tomcat-10.0.27.tar.gz
+Now the files are extracted into the folder apache
+4.	As the instance is new here, we do not have java here, first we have to install java
+So we do sudo yum install java -y or sudo apt-get install java -y  or 
+sudo apt-get install openjdk-11-jdk because tomcat uses java with it, so java need to be there on the instance
+5.	Usually setup files is inside the bin folder, there are two files in it startup.sh and shutdown.sh , so we will have to go bin folder
+cd apache-tomcat-10.0.27		ls
+cd bin					ls 
+execute startup.sh	./startup.sh	The tomcat has started
+6.	Go to browser & at the url bar type publicip:8080  example 13.232.88.117:8080
+Tomcat apache is launched.
+To terminate   ./shutdown.sh
